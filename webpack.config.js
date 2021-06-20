@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require("copy-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
@@ -18,10 +18,10 @@ module.exports = (env, argv) => {
 			new CopyPlugin({
 				patterns: [
 					{
-						from: path.resolve(__dirname, 'src', 'favicon.svg'), 
+						from: path.resolve(__dirname, 'src', 'favicon.svg'),
 						to: path.resolve(__dirname, 'dist')
-					},
-				],
+					}
+				]
 			}),
 			new MiniCssExtractPlugin(
 				{
@@ -41,7 +41,7 @@ module.exports = (env, argv) => {
 		target: 'web',
 		context: path.resolve(__dirname, 'src'),
 		entry: {
-			main: ['@babel/polyfill', './index.js'],
+			main: ['@babel/polyfill', './index.js']
 		},
 		output: {
 			path: path.resolve(__dirname, 'dist'),
