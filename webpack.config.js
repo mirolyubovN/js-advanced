@@ -13,7 +13,11 @@ module.exports = (env, argv) => {
 	const plugins = () => {
 		const base = [
 			new HtmlWebpackPlugin({
-				template: './index.html'
+				template: './index.html',
+				minify: {
+					removeComments: isProd,
+					collapseWhitespace: isProd
+				}
 			}),
 			new CopyPlugin({
 				patterns: [
@@ -60,7 +64,8 @@ module.exports = (env, argv) => {
 		devServer: {
 			port: '3000',
 			open: true,
-			hot: true
+			hot: true,
+			contentBase: '/'
 		},
 		plugins: plugins(),
 		module: {
