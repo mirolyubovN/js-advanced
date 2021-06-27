@@ -10,6 +10,9 @@ module.exports = {
 		node: true,
 		es6: true
 	},
-	extends: ['graph-base']
-
+	extends: ['graph-base'],
+	rules : {
+		'class-methods-use-this' : 0,
+		'no-unused-vars': 0
+	}
 };
