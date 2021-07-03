@@ -17,6 +17,7 @@
 	}
 
 	&-row-info {
+		position: relative;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -32,6 +33,7 @@
 	}
 
 	&-column {
+		position: relative;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -42,6 +44,40 @@
 		height: 100%;
 		border-top: 0;
 		border-left: 0;
+	}
+
+	&-column-resize,
+	&-row-resize {
+		position: absolute;
+		background: $border-blue;
+		opacity: 0;
+		z-index: 1;
+
+		&:hover {
+			opacity: 1 !important;
+		}
+	} 
+
+	&-column-resize {
+		top: 0;
+		right: -2px;
+		width: 4px;;
+		bottom: 0;
+
+		&:hover {
+			cursor: col-resize;
+		}
+	}
+
+	&-row-resize {
+		left: 0;
+		right: 0;
+		bottom: -2px;
+		height: 4px;
+
+		&:hover {
+			cursor: row-resize;
+		}
 	}
 
 	&-cell {
