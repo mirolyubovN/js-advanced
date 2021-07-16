@@ -1,4 +1,4 @@
-import capitalize from './utils';
+import {capitalize} from './utils';
 
 function getMethodName(eventName) {
 	return 'on' + capitalize(eventName);
@@ -23,6 +23,7 @@ export default class DOMListener {
 
 			this[method] = this[method].bind(this);
 			this.$root.on(listener, this[method]);
+			console.log(listener);
 		});
 	}
 
